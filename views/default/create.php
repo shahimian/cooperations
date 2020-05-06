@@ -4,17 +4,10 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\components\modules\cooperation\models\db\Cooperations */
-
-$this->title = 'فراخوانی جذب نیروی متخصص';
+/* @var $model shahimian\cooperations\models\db\Cooperations */
 ?>
-<h1><?= Html::encode($this->title) ?></h1>
-<div>شرکت شمیسا رایانه با شماره ثبت 40430 و با شماره ملی 14004384821 اقدام به جذب نیروی متخصص و خلاق در زمینه طراحی بازی کرده است. 
-در جمع دوستانی که علاقه به همکاری با این مجموعه هستند، لطفاً رزومه ی خود را بصورت یک فایل zip کرده و فرم زیر را بر اساس رشته تخصصی خود پر نمایید.
-لازم به توضیح است افرادی که مایل به همکاری دارند، الزاماً ساکن شیراز و بین سنین 22 تا 25 سال باشند. افراد دارای شرایط همکاری از روز اول مشمول بیمه این مجموعه قرار میگیرند. با تشکر</div>
-<div class="cooperations-create">
 
-    <h2>فرم همکاری</h2>
+<div class="cooperations-create">
 
     <?= $this->render('_form', [
         'model' => $model,

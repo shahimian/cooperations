@@ -1,10 +1,10 @@
 <?php
 
-namespace app\components\modules\cooperation\controllers;
+namespace shahimian\cooperations\controllers;
 
 use Yii;
-use app\components\modules\cooperation\models\db\Cooperations;
-use app\components\modules\cooperation\models\db\CooperationsSearch;
+use shahimian\cooperations\models\db\Cooperations;
+use shahimian\cooperations\models\db\CooperationsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        (new \app\components\modules\cooperation\models\Cooperations())->up();
+        (new \shahimian\cooperations\models\Cooperations())->up();
         $searchModel = new CooperationsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -65,6 +65,7 @@ class DefaultController extends Controller
     public function actionCreate()
     {
         $model = new Cooperations();
+
         $days = [];
         for($i = 1; $i <= 31; $i++)
             array_push($days, $i);
@@ -72,7 +73,7 @@ class DefaultController extends Controller
         $months = [];
         for($i = 1; $i <= 12; $i++)
             array_push($months, $i);
-
+    
         if ($model->load(Yii::$app->request->post())) {
             $model->specialties = json_encode($model->specialties);
             $model->save();
@@ -96,11 +97,21 @@ class DefaultController extends Controller
     {
         $model = $this->findModel($id);
 
+        $days = [];
+        for($i = 1; $i <= 31; $i++)
+            array_push($days, $i);
+
+        $months = [];
+        for($i = 1; $i <= 12; $i++)
+            array_push($months, $i);
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->cooperationId]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'days' => $days,
+                'months' => $months,
             ]);
         }
     }

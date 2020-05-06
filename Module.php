@@ -1,16 +1,16 @@
 <?php
 
-namespace app\components\modules\cooperation;
+namespace shahimian\cooperations;
 
 /**
  * cooperation module definition class
  */
-class Cooperation extends \yii\base\Module
+class Module extends \yii\base\Module
 {
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'app\components\modules\cooperation\controllers';
+    public $controllerNamespace = 'shahimian\cooperations\controllers';
 
     /**
      * @inheritdoc

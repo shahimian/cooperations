@@ -1,9 +1,9 @@
 <?php
 
-namespace app\components\modules\cooperation\models\db;
+namespace shahimian\cooperations\models\db;
 
 use Yii;
-use app\components\modules\cooperation\models\militaryServiceCondition;
+use shahimian\cooperations\models\militaryServiceCondition;
 
 /**
  * This is the model class for table "cooperations".

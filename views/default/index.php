@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\components\modules\cooperation\models\db\CooperationsSearch */
+/* @var $searchModel shahimian\cooperations\models\db\CooperationsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Cooperations';

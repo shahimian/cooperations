@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\modules\cooperation\models;
+namespace shahimian\cooperations\models;
 
 use yii\db\Migration;
 

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\components\modules\cooperation\models\db\Cooperations */
+/* @var $model shahimian\cooperations\models\db\Cooperations */
 
 $this->title = $model->cooperationId;
 $this->params['breadcrumbs'][] = ['label' => 'Cooperations', 'url' => ['index']];

@@ -5,26 +5,17 @@ use yii\widgets\ActiveForm;
 use yii\web\View;
 
 /* @var $this yii\web\View */
-/* @var $model app\components\modules\cooperation\models\db\Cooperations */
+/* @var $model shahimian\cooperations\models\db\Cooperations */
 /* @var $form yii\widgets\ActiveForm */
 
 $this->registerJs("$('div.field-militaryService, div.fields-workteam-app, div.field-cooperations-fundprice').hide()", View::POS_END, 'military-service-hide');
-
-$this->registerJs("$('#workteam-app input').change(function(){
-    if($(this).val() == 'بله'){
-        $('div.fields-workteam-app').slideDown();
-    } else {
-        $('div.fields-workteam-app').slideUp();
-    }
-});
-$('#is-fund input').change(function(){
-    if($(this).val() == 'بله'){
-        $('div.field-cooperations-fundprice').slideDown();
-    } else {
-        $('div.field-cooperations-fundprice').slideUp();
-    }
-})", View::POS_END, 'condition-fields');
+$this->title = 'فراخوانی جذب نیروی متخصص';
 ?>
+<h1><?= Html::encode($this->title) ?></h1>
+<div>شرکت شمیسا رایانه با شماره ثبت 40430 و با شماره ملی 14004384821 اقدام به جذب نیروی متخصص و خلاق در زمینه طراحی بازی کرده است. 
+در جمع دوستانی که علاقه به همکاری با این مجموعه هستند، لطفاً رزومه ی خود را بصورت یک فایل zip کرده و فرم زیر را بر اساس رشته تخصصی خود پر نمایید.
+لازم به توضیح است افرادی که مایل به همکاری دارند، الزاماً ساکن شیراز و بین سنین 22 تا 25 سال باشند. افراد دارای شرایط همکاری از روز اول مشمول بیمه این مجموعه قرار میگیرند. با تشکر</div>
+
 
 <div class="cooperations-form">
 
@@ -68,37 +59,14 @@ $('#is-fund input').change(function(){
 
     <?= $form->field($model, 'favoriteLesson')->textInput(['maxlength' => true]) ?>
 
-    <div>حداکثر 5 مورد از نرم افزارهایی که برای رشته تخصصی خود ضرورت میدانید نام ببرید:</div>
-
-    <?php for($i = 0; $i < 5; $i++): ?>
-    <?= $form->field($model, "[$i]essentialApp")->textInput() ?>
-    <?= $form->field($model, "[$i]essentialAppDegree")->radioList(['خوب', 'متوسط', 'عالی']) ?>
-    <?php endfor; ?>
-
-    <?= $form->field($model, 'isUsedWorkteamApp')->radioList([ 'خیر' => 'خیر', 'بله' => 'بله', ], ['id' => 'workteam-app']) ?>
-
-    <div class="fields-workteam-app">
-
-        <div>حداکثر 5 مورد از آنها را نام ببرید:</div>
-
-        <?php for($i = 0; $i < 5; $i++): ?>
-        <?= $form->field($model, "[$i]workteamAppName")->textInput() ?>
-        <?= $form->field($model, "[$i]workteamAppDegree")->radioList(['متوسط', 'خوب', 'عالی']) ?>
-        <?php endfor; ?>
-
-    </div>
-
     <?= $form->field($model, 'isFund')->radioList([ 'خیر' => 'خیر', 'بله' => 'بله', ], ['id' => 'is-fund']) ?>
 
     <?= $form->field($model, 'fundPrice')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'specialties[]')->checkboxList([
         'برنامه نویسی' => 'برنامه نویسی',
-        'ایده پردازی' => 'ایده پردازی',
-        'داستان نویسی' => 'داستان نویسی',
-        'کارگردانی' => 'کارگردانی',
-        'طراحی گرافیک' => 'طراحی گرافیک',
-        'گرافیک سه بعدی' => 'گرافیک سه بعدی']) ?>
+        'گرافیک' => 'گرافیک',
+    ]) ?>
 
     <?= $form->field($model, 'proposedSalary')->textInput(['maxlength' => true]) ?>
 

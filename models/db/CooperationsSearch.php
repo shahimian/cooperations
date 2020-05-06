@@ -1,14 +1,14 @@
 <?php
 
-namespace app\components\modules\cooperation\models\db;
+namespace shahimian\cooperations\models\db;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\components\modules\cooperation\models\db\Cooperations;
+use shahimian\cooperations\models\db\Cooperations;
 
 /**
- * CooperationsSearch represents the model behind the search form about `app\components\modules\cooperation\models\db\Cooperations`.
+ * CooperationsSearch represents the model behind the search form about `shahimian\cooperations\models\db\Cooperations`.
  */
 class CooperationsSearch extends Cooperations
 {
